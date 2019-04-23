@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CUARTO A</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/andrea.css">
+        <script>
+            function cambiarColor(component) {
+                component.style.color = "#AB56CD";
+            }
+            function cambiarColorNormal(component) {
+                component.style.color = "#000";
+            }
+            function calcularEdad(calendario) {
+                var hoy = new Date();                
+                var cumpleanos = new Date(calendario.value);
+                
+                var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+                var m = hoy.getMonth() - cumpleanos.getMonth();
+
+                if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                    edad--;
+                }
+                console.log(edad);
+                var txt_anio = document.getElementById("anio");
+                txt_anio.value = edad;
+                //alert(edad);
+            }
+            
+            function aleatorio() {
+                var dato = Math.random();
+                var txt_anio = document.getElementById("anio");
+                txt_anio.value = dato;
+            }
+            
+            function cambiar() {
+                var color = document.getElementById("color");
+                var valor = color.value;
+                //alert(valor);
+                var h1 = document.getElementsByTagName("h1");
+                //h1[0].style.color = valor;
+                for(var i = 0; i < h1.length; i++) {
+                    h1[i].style.color = valor;
+                }
+            }
+            
+        </script>
+    </head>
+    <body onload="aleatorio()">
+        
+        <div class="cuerpo">
+            <header>
+                <hgroup>
+                    <h1>PRUEBA</h1>
+                </hgroup>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="https://unl.edu.ec/" target="_blank">Unl</a></li>
+                    <li><a href="https://www.google.com">Google</a></li>
+                </ul>
+            </nav>
+            <div id="principal">
+                <section>
+                    <p>BIENVENIDOS AL CURSO</p>                    
+                    <form>
+                        <input type="text" id="anio" onblur="cambiarColor(this)" onfocus="cambiarColorNormal(this)"/>
+                        <input type="date" onchange="calcularEdad(this)" onkeyup="calcularEdad(this)"/>
+                        <input type="file"/>
+                        <input type="color" id="color" onchange="cambiar()"/>
+                        <select>
+                            <option value="1">Ecuador</option>
+                            <option value="2">Colombia</option>
+                        </select>
+                        <audio src="music/A_flor_de_piel.mp3" controls></audio>
+                        <iframe width="780" height="646" src="https://www.youtube.com/embed/w-U16XJLMWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src="https://multianime.com.mx/wp-content/uploads/2017/03/soul-of-gold-mauren-mendo.jpg" width="750"/>
+                    </form>
+                </section>
+
+            </div>
+            <footer>
+                <p>Derechos reservados 2019</p>
+                <h1>PRUEBA DE PATA</h1>
+            </footer>
+        </div>
+    </body>
+</html>
