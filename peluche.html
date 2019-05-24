@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    </head>
+    <body>
+        <script>
+            $(document).ready(function (){
+                $("button").click(function () {
+                    var capa = $("#capa");
+                    var chequeo = $("#check").prop('checked');
+                    var boton = $(this);
+                    if(chequeo == true) {
+                        capa.css("background", boton.css("background"));
+                    } else {
+                        $("body").css("background", boton.css("background"));
+                    }
+                });
+            });
+            //function color(boton) {
+                
+                /*var capa = document.getElementById("capa");
+                var check = document.getElementById("check");
+                if(check.checked) {
+                    //capa.class = boton.getAttr("class");
+                    capa.style.background = boton.getAttribute("css", "background");
+                    
+                } else {
+                    if(boton.value == "Azul") {
+                        document.body.style.background = "#007bff";
+                    }
+                }*/
+                
+            //}
+        </script>
+        <div class="alert alert-danger" id="capa">
+
+        </div>
+        <div class="cards">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header bg-primary">HOLA</div>
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary" value="Azul" >Azul</button>
+                    <button type="button" class="btn btn-secondary" value="Gris">Gris</button>
+                    <button type="button" class="btn btn-success" value="Verde">Verde</button>
+                    <button type="button" class="btn btn-danger" value="Rojo">Rojo</button>
+                    <button type="button" class="btn btn-warning" value="Anaranjado">Anaranjado</button>
+                    <input type="checkbox" id="check" /> Capa
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

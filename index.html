@@ -10,10 +10,17 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/andrea.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
-            function cambiarColor(component) {
+		$(document).ready(function(){
+			$("#anio").blur(function(){
+				var anio = $("#anio");
+				anio.css('color', '#AB56CD');								
+			});
+		});
+            /*function cambiarColor(component) {
                 component.style.color = "#AB56CD";
-            }
+            }*/
             function cambiarColorNormal(component) {
                 component.style.color = "#000";
             }
@@ -70,17 +77,18 @@ and open the template in the editor.
                 <section>
                     <p>BIENVENIDOS AL CURSO</p>                    
                     <form>
-                        <input type="text" id="anio" onblur="cambiarColor(this)" onfocus="cambiarColorNormal(this)"/>
+                        <input type="text" id="anio" onfocus="cambiarColorNormal(this)" name="txt_anio"/>
                         <input type="date" onchange="calcularEdad(this)" onkeyup="calcularEdad(this)"/>
                         <input type="file"/>
                         <input type="color" id="color" onchange="cambiar()"/>
-                        <select>
+                        <select name="pais">
                             <option value="1">Ecuador</option>
                             <option value="2">Colombia</option>
                         </select>
                         <audio src="music/A_flor_de_piel.mp3" controls></audio>
                         <iframe width="780" height="646" src="https://www.youtube.com/embed/w-U16XJLMWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img src="https://multianime.com.mx/wp-content/uploads/2017/03/soul-of-gold-mauren-mendo.jpg" width="750"/>
+			<input type="submit" value="GUARDAR"/>
                     </form>
                 </section>
 
